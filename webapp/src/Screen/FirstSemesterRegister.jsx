@@ -3,7 +3,10 @@ import React from 'react'
 
 
 export default function FirstSemesterRegister(){
-    <div>
+    return(
+        <div>
         <text>Hello World</text>
     </div>
-}
+    )
+    
+} 

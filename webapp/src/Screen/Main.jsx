@@ -2,6 +2,8 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import "../css/ButtonMenu.css"
 
+import {Link} from 'react-router-dom'
+
 export default function Main (){
     return(
 
@@ -9,7 +11,7 @@ export default function Main (){
 
         <div className="contentMenu">
             <Button id="buttonUpMenu" variant="outlined" color="primary">
-            Register Class
+              <Link to="/RegisterClass" > Register Class</Link>
             </Button>
 
             <Button id="buttonUpMenu" variant="outlined" color="primary">

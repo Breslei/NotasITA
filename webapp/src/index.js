@@ -6,13 +6,11 @@ import * as serviceWorker from './serviceWorker';
 import LOGIN from './Screen/Login.jsx'
 import Main from './Screen/Main.jsx'
 import RegisterClass from './Screen/RegisterClass.jsx'
+import Routes from './Screen/Routes'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <LOGIN/>
-    <Main/>
-    <RegisterClass/>
+    <Routes/>
   </React.StrictMode>,
   document.getElementById('root')
 );
