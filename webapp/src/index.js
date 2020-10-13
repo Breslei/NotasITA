@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import LOGIN from './Screen/Login.jsx'
+import Main from './Screen/Main.jsx'
+import RegisterClass from './Screen/RegisterClass.jsx'
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <LOGIN/>
+    <Main/>
+    <RegisterClass/>
   </React.StrictMode>,
   document.getElementById('root')
 );
