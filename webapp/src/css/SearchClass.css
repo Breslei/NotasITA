@@ -2,14 +2,14 @@
     width: auto;
 }
 
-#buttonSend{
+#buttonSendSearchClass{
     margin-left: 1%;
     margin-top: 1%;
     width: 5%;
     height: 3%;
 }
 
-.content-body-RegisterClass{
+.content-body-SearchClass{
     background-color: white; 
     width: 70%;
     height: 80%;
@@ -22,12 +22,12 @@
     border-color: #d0d0d0;
 }
 
-.bodyRegisterClass{
+.bodySearchClass{
     width: auto;
     height: auto;
 }
 
-.backGroundFrameFormRegisterClass{
+.backGroundFrameFormSearchClass{
     background-color:#f4f4f4 ;
     align-content: flex;
     border-style: outset;
@@ -39,7 +39,7 @@
     padding-bottom: 8%;
 }
 
-.titleRegisterClass{
+.titleSearchClass{
     font-size: 32pt;
     display: flex;
     align-items: center;
@@ -47,16 +47,16 @@
     margin-left: auto;
 }
 
-.content-body-FirstRegisterClass{
+.content-body-FirstSearchClass{
     margin-left: auto;
     margin-top: 5%;   
 }
 
-.formFirstRegisterClass{
+.formFirstSearchClass{
     margin-left: 10.5%;
     margin-top: 5%;   
 }
-.fieldLabelRegisterClass{
+.fieldLabelSearchClass{
     display: flex;
     flex-direction: row;
     align-items: left;
@@ -67,21 +67,21 @@
     width: 27%;
 }
 
-#chooseTeamRegisterClass{
+#chooseTeamSearchClass{
     width: 27%;
     border-radius: "5px";
     margin-bottom: 2.5%;
     margin-right: 4%;
 }
 
-#responsibilityTeamRegisterClass{
+#responsibilityTeamSearchClass{
     width: 27%;
     border-radius: "5px";
     margin-bottom: 2.5%;
     margin-right: 4%;
 }
 
-.linkRegisterClass{
+.linkSearch{
     text-decoration: none;
     color: inherit;
 }

@@ -34,7 +34,7 @@ export default function LoginScreen (){
         
          <div >
           <Button id="buttonLeft"  variant="contained" ><b>Register</b></Button>
-          <Button id="buttonRight"  variant="contained" ><b><Link to="/Main" >Sign in</Link></b></Button>
+          <Link to="/Main" id="linkMain"><Button id="buttonRight"  variant="contained" ><b>Sign in</b></Button></Link>
          </div>
      </div>
     </div>

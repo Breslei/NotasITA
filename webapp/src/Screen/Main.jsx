@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '@material-ui/core/Button'
-import "../css/ButtonMenu.css"
+import "../css/MainMenu.css"
 
 import {Link} from 'react-router-dom'
 
@@ -10,17 +10,25 @@ export default function Main (){
         <div className="bodyMenu">
 
         <div className="contentMenu">
-            <Button id="buttonUpMenu" variant="outlined" color="primary">
-              <Link to="/RegisterClass" > Register Class</Link>
-            </Button>
+           <Link to="/RegisterClass" className="linkMenu"> 
+               <Button id="buttonUpMenu" variant="outlined" color="primary">
+                 Register Class
+               </Button>
+           </Link>
 
-            <Button id="buttonUpMenu" variant="outlined" color="primary">
-            Search Class
-            </Button>
+            <Link to="/SearchClass" className="linkMenu" >
+                <Button id="buttonUpMenu" variant="outlined" color="primary">
+                  Search Class
+               </Button>
+            </Link>
+            
             <br/>
-            <Button id="buttonDownMenu" variant="outlined" color="primary">
-            Forms
-            </Button>
+
+            <Link to="/SearchClass" className="linkMenu">
+               <Button id="buttonDownMenu" variant="outlined" color="primary">
+                   Forms
+               </Button>
+            </Link>
 
             <Button id="buttonDownMenu" variant="outlined" color="primary" href={{javascript: window.close()}}>
             Exit
