@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import SwipeableViews from 'react-swipeable-views';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -7,10 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-
-
-
-
+import '../css/RegisterClass.css';
 
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -19,19 +15,14 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 
-
-import "../css/RegisterClass.css"
-
-import {Link} from 'react-router-dom'
+import { ShowFrame } from '../Screen/components/componentsFrame.jsx';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
-      role="tabpanel"
+      role='tabpanel'
       hidden={value !== index}
       id={`full-width-tabpanel-${index}`}
       aria-labelledby={`full-width-tab-${index}`}
@@ -46,30 +37,26 @@ function TabPanel(props) {
   );
 }
 
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};
-
 function a11yProps(index) {
   return {
     id: `full-width-tab-${index}`,
-    'aria-controls': `full-width-tabpanel-${index}`,
+    'aria-controls': `full-width-tabpanel-${index}`
   };
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
-  },
+    width: 500
+  }
 }));
 
 export default function FullWidthTabs() {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
+  const [classSelected, setClassSelected] = useState('CE-229');
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -79,18 +66,22 @@ export default function FullWidthTabs() {
     setValue(index);
   };
 
+  const sendChoosedClass = () => {
+    setIsVisible(true);
+  };
+
   return (
-    <div className={classes.root}  className="frameTabs"  >
-      <AppBar position="static" color="default">
+    <div className={classes.root} className='frameTabs'>
+      <AppBar position='static' color='default'>
         <Tabs
           value={value}
           onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-          variant="fullWidth"
+          indicatorColor='primary'
+          textColor='primary'
+          variant='fullWidth'
         >
-          <Tab label="1º Semester" {...a11yProps(0)} />
-          <Tab label="2º Semester" {...a11yProps(1)} />
+          <Tab label='1º Semester' {...a11yProps(0)} />
+          <Tab label='2º Semester' {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -99,99 +90,35 @@ export default function FullWidthTabs() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-     {/*  formulário  */} 
-      <FormControl className={classes.formControl} >
-          <InputLabel htmlFor="grouped-select" >Choose the Class</InputLabel>
-          <Select defaultValue="" id="grouped-select" style={{width:200}}>
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <ListSubheader>1º Semester</ListSubheader>
-            <MenuItem value={1} >CE-229</MenuItem>
-            <MenuItem value={2} >CE-240</MenuItem>
-            <MenuItem value={3} >CE-245</MenuItem>
-          </Select>
-        </FormControl>
+          <div>
+            <FormControl className={classes.formControl}>
+              <InputLabel htmlFor='grouped-select'>Choose the Class</InputLabel>
+              <Select
+                defaultValue='CE-229'
+                id='grouped-select'
+                onChange={(event) => setClassSelected(event.target.value)}
+                style={{ width: 200 }}
+              >
+                <MenuItem value=''>
+                  <em>None</em>
+                </MenuItem>
+                <ListSubheader>1º Semester</ListSubheader>
+                <MenuItem value='CE-229'>CE-229</MenuItem>
+                <MenuItem value='CE-240'>CE-240</MenuItem>
+                <MenuItem value='CE-245'>CE-245</MenuItem>
+              </Select>
+            </FormControl>
 
-        <Button id="buttonSend"  variant="contained" ><b>Send</b></Button>
+            <Button
+              id='buttonSend'
+              variant='contained'
+              onClick={() => sendChoosedClass()}
+            >
+              <b>Send</b>
+            </Button>
 
-        <br/>
-        <br/>
-        <br/>
-
-
-        <div className="bodyRegisterClass">
-          <div className="backGroundFrameFormRegisterClass">
-              <h1 className="titleRegisterClass">Register Students{/* {props.nameClass} */} CE-229</h1>
-            <div className="content-body-FirstRegisterClass"   >
-              <form  className="formFirstRegisterClass">
-               
-                <TextField style={{backgroundColor:'white',borderRadius:'5px'}} className="fieldLabelRegisterClass" 
-                label="First Name" type="text" variant="outlined"/>
-
-                <TextField style={{backgroundColor:'white',borderRadius:'5px', marginLeft:'5%', marginBottom:'5%'}} className="fieldLabelRegisterClass"
-                label="Last Name" type="text" variant="outlined"/>
-               
-                <TextField style={{backgroundColor:'white',borderRadius:'5px', marginLeft:'5%'}} className="fieldLabelRegisterClass" 
-                label="E-mail Address" type="email" variant="outlined"/>
-
-        
-
-                <div>
-                        <FormControl className={classes.formControl} id="chooseTeamRegisterClass" >
-                        <InputLabel htmlFor="grouped-select">Choose the Team</InputLabel>
-                        <Select defaultValue="" id="team-selectRegisterClass">
-                            <MenuItem value="">
-                            <em>None</em>
-                            </MenuItem>
-                            <ListSubheader>Team</ListSubheader>
-                            <MenuItem value={1} >TS01</MenuItem>
-                            <MenuItem value={2} >TS02</MenuItem>
-                            <MenuItem value={3} >TS03</MenuItem>
-                            <MenuItem value={4} >TS04</MenuItem>
-                        </Select>
-                        </FormControl>
-                
-                        <FormControl className={classes.formControl} id="responsibilityTeamRegisterClass">
-                        <InputLabel htmlFor="grouped-select">Responsibility</InputLabel>
-                        <Select defaultValue="" id="responsibility-selectRegisterClass">
-                            <MenuItem value="">
-                            <em>None</em>
-                            </MenuItem>
-                            <ListSubheader>Responsibility</ListSubheader>
-                            <MenuItem value={1} >Product Owner (PO)</MenuItem>
-                            <MenuItem value={2} >Scrum Master (SM)</MenuItem>
-                            <MenuItem value={3} >Team Developer (TD)</MenuItem>
-                        </Select>
-                        </FormControl>
-              
-
-                <TextField className="fieldLabelRegisterClass"  label="Date" type="date" style={{marginLeft:"2%"}}
-                variant="outlined" id="dateField"/>
-
-                  </div>
-             </form>   
-             <div >
-          <Button id="buttonLeft"  variant="contained" ><b>Register</b></Button>
-          <Link to="/Main" className="linkRegisterClass"><Button id="buttonRight"  variant="contained" ><b>Cancel</b></Button></Link>
-         </div>
-            </div>
-        </div>
-      
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <ShowFrame visible={isVisible} title={classSelected} />
+          </div>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           Item Two
@@ -200,90 +127,3 @@ export default function FullWidthTabs() {
     </div>
   );
 }
-
-
-
-
-
-  //https://material-ui.com/pt/components/tabs/#simple-tabs
-/* 
-
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
-
-export default function SimpleTabs() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
-    </div>
-  );
-}
-   */
