@@ -10,6 +10,8 @@ import Main from './Main'
 import FirstSemesterRegister from './FirstSemesterRegister'
 import RegisterClass from './RegisterClass'
 import SearchClass from './SearchClass'
+import FormMain from './FormMain'
+import TesteScreen from './TesteScreen'
 
 export default function Routes(){
     return(
@@ -20,6 +22,10 @@ export default function Routes(){
             <Route path="/FirstSemesterRegister" component={FirstSemesterRegister} />        
             <Route path="/RegisterClass"  component={RegisterClass} />
             <Route path="/SearchClass"  component={SearchClass} />
+            <Route path="/FormMain"  component={FormMain} />
+            <Route path="/TesteScreen"  component={TesteScreen} />
+
+            
         </Switch>
     </Router>
     )

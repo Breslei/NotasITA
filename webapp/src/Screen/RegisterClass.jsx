@@ -16,7 +16,7 @@ import Select from '@material-ui/core/Select';
 
 import Button from '@material-ui/core/Button';
 
-import { ShowFrame } from '../Screen/components/componentsFrame.jsx';
+import { ShowFrame } from './components/componentsFirstRegisterFrame.jsx';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

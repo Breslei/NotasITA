@@ -24,7 +24,7 @@ export default function Main (){
             
             <br/>
 
-            <Link to="/SearchClass" className="linkMenu">
+            <Link to="/FormMain" className="linkMenu">
                <Button id="buttonDownMenu" variant="outlined" color="primary">
                    Forms
                </Button>

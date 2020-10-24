@@ -1,0 +1,25 @@
+ [{
+    "id": 1,
+    "first_name": "Inessa",
+    "last_name": "Cutbirth",
+    "email": "icutbirth0@nytimes.com",
+    "gender": "Female"
+  }, {
+    "id": 2,
+    "first_name": "Boote",
+    "last_name": "Forre",
+    "email": "bforre1@washingtonpost.com",
+    "gender": "Male"
+  }, {
+    "id": 3,
+    "first_name": "Hyacintha",
+    "last_name": "Jikovsky",
+    "email": "hjikovsky2@go.com",
+    "gender": "Female"
+  }, {
+    "id": 4,
+    "first_name": "Maxie",
+    "last_name": "Blair",
+    "email": "mblair3@mashable.com",
+    "gender": "Female"
+  }]

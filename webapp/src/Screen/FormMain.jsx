@@ -18,11 +18,12 @@ import Button from '@material-ui/core/Button';
 
 import {Link} from 'react-router-dom'
 
-import {SearchFrame} from "./components/componentSearchFrame.jsx"
+import {FramePO} from "./components/componentsSprintReviewFrame.jsx"
 import "../css/SearchClass.css"
 
 
 function TabPanel(props) {
+
   const { children, value, index, ...other } = props;
 
   return (
@@ -66,7 +67,8 @@ export default function FullWidthTabs() {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
-  const [classSelected, setClassSelected] = useState('CE-229');
+  const [sprintSelected, setSprintSelected] = useState('Sprint1');
+  const [responsabiltySelected, setResponsabiltySelected] = useState('TD');
   const [isVisible, setIsVisible] = useState(false)
 
 
@@ -78,7 +80,7 @@ export default function FullWidthTabs() {
     setValue(index);
   };
 
-  const choosedClassSearch=()=>{
+  const choosedSprintReview=()=>{
       setIsVisible(true)
   }
 
@@ -105,21 +107,40 @@ export default function FullWidthTabs() {
      {/*  formulário  */} 
       <FormControl className={classes.formControl} >
           <InputLabel htmlFor="grouped-select" >Choose the Class</InputLabel>
-          <Select defaultValue="" id="grouped-select" style={{width:200}} onChange={(event)=> setClassSelected(event.target.value)}>
+          <Select defaultValue="" id="grouped-select" style={{width:200}} onChange={(event)=> setSprintSelected(event.target.value)}>
             <MenuItem value="">
               <em>None</em>
             </MenuItem>
             <ListSubheader>1º Semester</ListSubheader>
-            <MenuItem value='CE-229' >CE-229</MenuItem>
-            <MenuItem value='CE-240' >CE-240</MenuItem>
-            <MenuItem value='CE-245' >CE-245</MenuItem>
+            <MenuItem value='Sprint1'>1ª Sprint</MenuItem>
+            <MenuItem value='Sprint2'>2ª Sprint</MenuItem>
+            <MenuItem value='Sprint3'>3ª Sprint</MenuItem>
           </Select>
         </FormControl>
 
-        <Button id="buttonSendSearchClass"  variant="contained"  onClick={()=>choosedClassSearch()}><b>Send</b></Button>
+        <FormControl  id="responsibilityTeamSearchClass">
+         <InputLabel htmlFor="grouped-select">Responsibility</InputLabel>
+           <Select defaultValue="" id="responsibility-selectSearchClass" onChange={(event)=>setResponsabiltySelected(event.target.value)}>
+             <MenuItem value="">
+                <em>None</em>
+                 </MenuItem>
+                  <ListSubheader>Responsibility</ListSubheader>
+                 <MenuItem value='PO' >Product Owner (PO)</MenuItem>
+               <MenuItem value='SM' >Scrum Master (SM)</MenuItem>
+              <MenuItem value='TD' >Team Developer (TD)</MenuItem>
+            </Select>
+        </FormControl>
+
+        <Button id="buttonSendSearchClass"  variant="contained"  onClick={()=>choosedSprintReview()}><b>Send</b></Button>
         
-         <SearchFrame title={classSelected} visible={isVisible}/>
-  
+        <FramePO visible={isVisible} responsabilty={responsabiltySelected}/>
+         
+
+
+
+    
+
+
         </TabPanel>
 
 
@@ -136,6 +157,3 @@ export default function FullWidthTabs() {
 
 
 
-
-
-  //https://material-ui.com/pt/components/tabs/#simple-tabs
