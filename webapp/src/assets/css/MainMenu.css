@@ -1,31 +1,26 @@
-.bodyMenu{
+.containerMenu{
     background-color: #007bff;
     width: auto;
-    height: auto;
+    height:100vh;/* preenche todo o restante da tela 100vh */
     padding-top: 10%;
-    padding-bottom: 10%;
-    height: auto;
 }
-
-
 
 .contentMenu{
     width: 60%;
     height: 80%;
-    margin-left: 20%;
     padding-bottom: 5%;
     align-content: flex;
     background-color: white;
     border-style: outset;
     border-width: 0.5;
     border-color: #d0d0d0 ;
-text-decoration: none;
+    text-decoration: none;
 }
-#buttonUpMenu{
+
+#buttonUpMenuLeft{
     height: 150px;
     width: 300px;
     margin-top: 10%;
-    margin-left: 16%;
     flex-direction: row;
     display: inline-flex;
     align-items: center;
@@ -34,11 +29,37 @@ text-decoration: none;
     font-size: 24pt;
 }
 
-#buttonDownMenu{
+#buttonUpMenuRight{
+    height: 150px;
+    width: 300px;
+    margin-top: 10%;
+    margin-left: 5%;
+    flex-direction: row;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;/* font bold */
+    font-size: 24pt;
+}
+
+#buttonDownMenuLeft{
     height: 150px;
     width: 300px;
     margin-top: 5%;
-    margin-left: 16%;
+    margin-bottom: 3%;
+    flex-direction: row;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;/* font bold */
+    font-size: 24pt;
+}
+
+#buttonDownMenuRight{
+    height: 150px;
+    width: 300px;
+    margin-top: 5%;
+    margin-left: 5%;
     margin-bottom: 3%;
     flex-direction: row;
     display: inline-flex;
