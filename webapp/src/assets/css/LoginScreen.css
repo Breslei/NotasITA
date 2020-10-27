@@ -1,0 +1,65 @@
+.Main{
+    margin-top: 12%;
+}
+
+#imgLogo{
+    margin-top: 10%;
+}
+
+.title{
+    font-size: 32pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.textLabel{
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    font-size: 14pt;
+    padding: 0;
+    margin-left: 10%;
+}
+
+
+.form{
+   
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%; 
+}
+
+#fieldLabel{
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    font-size: 14pt;
+    border-radius: "5px";
+
+}
+
+.buttonsDiv{
+    padding-bottom: 15%;
+}
+
+#buttonLeft{
+    width: 120px;
+    height: 50px;    
+    margin-right: 0.5%;
+    font-size: 12pt;
+}
+
+#buttonRight{
+    width: 120px;
+    height: 50px;
+    margin-left: 5%;
+    font-size: 12pt;
+}
+
+#linkMain{
+    text-decoration: none;
+    color: inherit;
+}
+

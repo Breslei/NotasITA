@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
 
-import '../../css/RegisterClass.css';
+//import '../../css/RegisterClass.css';
 
 export const ShowFrame = ({ visible, title }) => {
   if (visible) {

@@ -16,18 +16,17 @@ import Select from '@material-ui/core/Select';
 
 import Button from '@material-ui/core/Button';
 
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import {SearchFrame} from "./components/componentSearchFrame.jsx"
-import "../css/SearchClass.css"
-
+import { SearchFrame } from './components/componentSearchFrame.jsx';
+//import "../css/SearchClass.css"
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
     <div
-      role="tabpanel"
+      role='tabpanel'
       hidden={value !== index}
       id={`full-width-tabpanel-${index}`}
       aria-labelledby={`full-width-tab-${index}`}
@@ -45,21 +44,21 @@ function TabPanel(props) {
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired
 };
 
 function a11yProps(index) {
   return {
     id: `full-width-tab-${index}`,
-    'aria-controls': `full-width-tabpanel-${index}`,
+    'aria-controls': `full-width-tabpanel-${index}`
   };
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
-  },
+    width: 500
+  }
 }));
 
 export default function FullWidthTabs() {
@@ -67,8 +66,7 @@ export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
   const [classSelected, setClassSelected] = useState('CE-229');
-  const [isVisible, setIsVisible] = useState(false)
-
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -78,22 +76,22 @@ export default function FullWidthTabs() {
     setValue(index);
   };
 
-  const choosedClassSearch=()=>{
-      setIsVisible(true)
-  }
+  const choosedClassSearch = () => {
+    setIsVisible(true);
+  };
 
   return (
-    <div className={classes.root}  className="frameTabs"  >
-      <AppBar position="static" color="default">
+    <div className={classes.root} className='frameTabs'>
+      <AppBar position='static' color='default'>
         <Tabs
           value={value}
           onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-          variant="fullWidth"
+          indicatorColor='primary'
+          textColor='primary'
+          variant='fullWidth'
         >
-          <Tab label="1º Semester" {...a11yProps(0)} />
-          <Tab label="2º Semester" {...a11yProps(1)} />
+          <Tab label='1º Semester' {...a11yProps(0)} />
+          <Tab label='2º Semester' {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -102,29 +100,35 @@ export default function FullWidthTabs() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-     {/*  formulário  */} 
-      <FormControl className={classes.formControl} >
-          <InputLabel htmlFor="grouped-select" >Choose the Class</InputLabel>
-          <Select defaultValue="" id="grouped-select" style={{width:200}} onChange={(event)=> setClassSelected(event.target.value)}>
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <ListSubheader>1º Semester</ListSubheader>
-            <MenuItem value='CE-229' >CE-229</MenuItem>
-            <MenuItem value='CE-240' >CE-240</MenuItem>
-            <MenuItem value='CE-245' >CE-245</MenuItem>
-          </Select>
-        </FormControl>
+          {/*  formulário  */}
+          <FormControl className={classes.formControl}>
+            <InputLabel htmlFor='grouped-select'>Choose the Class</InputLabel>
+            <Select
+              defaultValue=''
+              id='grouped-select'
+              style={{ width: 200 }}
+              onChange={(event) => setClassSelected(event.target.value)}
+            >
+              <MenuItem value=''>
+                <em>None</em>
+              </MenuItem>
+              <ListSubheader>1º Semester</ListSubheader>
+              <MenuItem value='CE-229'>CE-229</MenuItem>
+              <MenuItem value='CE-240'>CE-240</MenuItem>
+              <MenuItem value='CE-245'>CE-245</MenuItem>
+            </Select>
+          </FormControl>
 
-        <Button id="buttonSendSearchClass"  variant="contained"  onClick={()=>choosedClassSearch()}><b>Send</b></Button>
-        
-         <SearchFrame title={classSelected} visible={isVisible}/>
-  
+          <Button
+            id='buttonSendSearchClass'
+            variant='contained'
+            onClick={() => choosedClassSearch()}
+          >
+            <b>Send</b>
+          </Button>
+
+          <SearchFrame title={classSelected} visible={isVisible} />
         </TabPanel>
-
-
-
-
 
         <TabPanel value={value} index={1} dir={theme.direction}>
           Item Two
@@ -134,8 +138,4 @@ export default function FullWidthTabs() {
   );
 }
 
-
-
-
-
-  //https://material-ui.com/pt/components/tabs/#simple-tabs
+//https://material-ui.com/pt/components/tabs/#simple-tabs
