@@ -1,9 +1,12 @@
 .frameTabs{
     width: auto;
 }
+#selectCombo{
+    margin-bottom: 2.5%;
+    margin-left: 5%;
+}
 
 #buttonSend{
-    margin-left: 1%;
     margin-top: 1%;
     width: 5%;
     height: 3%;
@@ -13,7 +16,6 @@
     background-color: white; 
     width: 70%;
     height: 80%;
-    margin-left: 15%;
     margin-top: 5%;
     padding-bottom: 5%;
     align-content: flex;
@@ -84,4 +86,11 @@
 .linkRegisterClass{
     text-decoration: none;
     color: inherit;
+}
+
+#buttonRegister{
+    margin-left: 10%;
+    margin-top: 1%;
+    width: 5%;
+    height: 3%;
 }

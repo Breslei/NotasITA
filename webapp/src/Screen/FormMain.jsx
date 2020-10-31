@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 
+import '../assets/css/FormMain.css'
 
 import { makeStyles, useTheme, AppBar,Tabs,Tab,Typography,Box,
-InputLabel,MenuItem,ListSubheader,FormControl,Select,Button } from '@material-ui/core/';
-
-
+InputLabel,MenuItem,ListSubheader,FormControl,Select,Button, Container } from '@material-ui/core/';
 
 import { Link } from 'react-router-dom';
 
@@ -74,6 +73,7 @@ export default function FullWidthTabs() {
   };
 
   return (
+    <Container maxWidth="xl">
     <div className={classes.root} className='frameTabs'>
       <AppBar position='static' color='default'>
         <Tabs
@@ -112,11 +112,11 @@ export default function FullWidthTabs() {
             </Select>
           </FormControl>
 
-          <FormControl id='responsibilityTeamSearchClass'>
-            <InputLabel htmlFor='grouped-select'>Responsibility</InputLabel>
+          <FormControl id='fieldTeamFormClass'>
+            <InputLabel htmlFor='grouped-select' >Responsibility</InputLabel>
             <Select
               defaultValue=''
-              id='responsibility-selectSearchClass'
+              id='responsibilityTeamFormClass'
               onChange={(event) => setResponsabiltySelected(event.target.value)}
             >
               <MenuItem value=''>
@@ -145,5 +145,6 @@ export default function FullWidthTabs() {
         </TabPanel>
       </SwipeableViews>
     </div>
+   </Container>
   );
 }

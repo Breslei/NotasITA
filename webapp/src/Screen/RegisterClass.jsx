@@ -1,26 +1,15 @@
 import React, { useState } from 'react';
 import SwipeableViews from 'react-swipeable-views';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-// import '../css/RegisterClass.css';
+import { makeStyles, useTheme, AppBar,Tabs,Tab,Typography,Box,
+  InputLabel,MenuItem,ListSubheader,FormControl,Select,Button, Container } from '@material-ui/core/';
 
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-
-import Button from '@material-ui/core/Button';
-
+import '../assets/css/RegisterClass.css'
 import { ShowFrame } from './components/componentsFirstRegisterFrame.jsx';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
   return (
+   <Container>
     <div
       role='tabpanel'
       hidden={value !== index}
@@ -34,6 +23,7 @@ function TabPanel(props) {
         </Box>
       )}
     </div>
+    </Container>
   );
 }
 
@@ -71,6 +61,7 @@ export default function FullWidthTabs() {
   };
 
   return (
+    <Container maxWidth="xl">
     <div className={classes.root} className='frameTabs'>
       <AppBar position='static' color='default'>
         <Tabs
@@ -91,7 +82,7 @@ export default function FullWidthTabs() {
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
           <div>
-            <FormControl className={classes.formControl}>
+            <FormControl  id="selectCombo">
               <InputLabel htmlFor='grouped-select'>Choose the Class</InputLabel>
               <Select
                 defaultValue='CE-229'
@@ -110,7 +101,7 @@ export default function FullWidthTabs() {
             </FormControl>
 
             <Button
-              id='buttonSend'
+              id='buttonRegister'
               variant='contained'
               onClick={() => sendChoosedClass()}
             >
@@ -125,5 +116,6 @@ export default function FullWidthTabs() {
         </TabPanel>
       </SwipeableViews>
     </div>
+    </Container>
   );
 }

@@ -1,16 +1,8 @@
-/* APAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR!!!!!!!!!!!! */
-
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import { makeStyles, TextField,
+  InputLabel,MenuItem,ListSubheader,FormControl,Select,Button, Container } from '@material-ui/core/';
 
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-//import '../css/FirstSemesterRegister.css'
+import '../assets/css/FirstSemesterRegister.css'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -46,6 +38,7 @@ export default function FirstSemesterRegister() {
 
   return (
     <div>
+      <Container maxWidth='xl'>
       <FormControl className={classes.formControl}>
         <InputLabel htmlFor='grouped-select'>Choose the Class</InputLabel>
         <Select defaultValue='' id='grouped-select'>
@@ -160,6 +153,7 @@ export default function FirstSemesterRegister() {
           </div>
         </div>
       </div>
+    </Container>
     </div>
   );
 }
